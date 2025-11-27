@@ -18,7 +18,8 @@ const allBenefits = [
       region: null,
       minChildren: 0,
       worth: 10,
-      siteLink:"https://www.seoulmomcare.com/notice/businessGuide.do"
+      siteLink:"https://www.seoulmomcare.com/notice/businessGuide.do",
+      applied: false,
     },
   },
   {
@@ -32,7 +33,8 @@ const allBenefits = [
       region: "서울",
       minChildren: 1,
       worth: 10,
-      siteLink:"https://seoul-agi.seoul.go.kr/postpartum-care"
+      siteLink:"https://seoul-agi.seoul.go.kr/postpartum-care",
+      applied: false,
     },
   },
   {
@@ -46,7 +48,8 @@ const allBenefits = [
       region: "경기",
       minChildren: 1,
       worth: 10,
-      siteLink: "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001361&wlfareInfoReldBztpCd=02"
+      siteLink: "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001361&wlfareInfoReldBztpCd=02",
+      applied: false,
     },
   },
   {
@@ -60,7 +63,8 @@ const allBenefits = [
       region: null,
       minChildren: 1,
       worth: 10,
-      siteLink: "http://www.voucher.go.kr/voucher/firstEncounter.do"
+      siteLink: "http://www.voucher.go.kr/voucher/firstEncounter.do",
+      applied: false,
     },
   },
   {
@@ -74,7 +78,8 @@ const allBenefits = [
       region: "부산",
       minChildren: 2, // 자녀 2명 '이상'
       worth: 10,
-      siteLink: "https://www.busan.go.kr/childcare/childcare0602"
+      siteLink: "https://www.busan.go.kr/childcare/childcare0602",
+      applied: false,
     },
   },
 ];
@@ -148,6 +153,9 @@ function checkBenefitMatch(user, criteria) {
   ) {
     return false;
   }
+  if(criteria.applied !== false){
+    return false;
+  }
 
   // 모든 조건을 통과하면 true 반환
   return true;
@@ -175,8 +183,16 @@ function renderResults(matched, unmatched) {
                   <button class="text-sm text-white bg-green-600 px-3 py-1 rounded-full mt-3 hover:bg-green-700" onclick="location.href='${benefit.criteria.siteLink}'";>
                       자세한 정보 보기
                   </button>
+                  <label class="flex items-center gap-2 mt-3">
+                    <input type="checkbox" class="benefit-check" ${benefit.applied ? "checked" : ""}>
+                    <span class="text-sm text-gray-700">신청완료!</span>
+                  </label>
               `;
       matchedBenefitsContainer.appendChild(benefitEl);
+      const checkbox = benefitEl.querySelector(".benefit-check");
+      checkbox.addEventListener("change", () => {
+        benefit.applied = checkbox.checked;
+      });
     }); 
   } else {
     // 매칭된 혜택이 없을 경우
