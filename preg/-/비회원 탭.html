@@ -1,0 +1,442 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>임신 혜택 찾기</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+
+      body {
+        font-family: "Noto Sans KR", "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 flex items-center">
+            <h1 class="text-2xl font-bold text-blue-600">임신 혜택</h1>
+          </div>
+          <nav class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-blue-500 text-sm font-medium text-gray-900"
+            >
+              혜택 찾기
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              소개
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              커뮤니티
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+      <!-- 8Page: 기초정보 입력 (회원가입 대신) -->
+      <section
+        id="user-info-section"
+        class="bg-white p-6 sm:p-8 rounded-lg shadow-lg max-w-2xl mx-auto"
+      >
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">
+          맞춤 혜택을 위한 정보 입력
+        </h2>
+        <p class="text-gray-600 mb-6">
+          간단한 정보를 입력하고 나에게 꼭 맞는 혜택을 찾아보세요.
+        </p>
+
+        <form id="info-form" class="space-y-4">
+          <div>
+            <label for="age" class="block text-sm font-medium text-gray-700"
+              >나이 (만)</label
+            >
+            <input
+              type="number"
+              id="age"
+              name="age"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              placeholder="예: 30"
+              required
+            />
+          </div>
+
+          <div>
+            <label
+              for="income-bracket"
+              class="block text-sm font-medium text-gray-700"
+              >소득 분위</label
+            >
+            <select
+              id="income-bracket"
+              name="income-bracket"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
+            >
+              <option value="">선택하세요</option>
+              <option value="1">1분위</option>
+              <option value="2">2분위</option>
+              <option value="3">3분위</option>
+              <option value="4">4분위</option>
+              <option value="5">5분위</option>
+              <option value="6">6분위</option>
+              <option value="7">7분위</option>
+              <option value="8">8분위</option>
+              <option value="9">9분위</option>
+              <option value="10">10분위 (이상)</option>
+            </select>
+            <p class="mt-1 text-xs text-gray-500">
+              *소득분위가 낮을수록(1분위) 소득이 낮음을 의미합니다.
+            </p>
+          </div>
+
+          <!-- <div>
+            <label for="region" class="block text-sm font-medium text-gray-700"
+              >거주 지역</label
+            >
+            <select
+              id="region"
+              name="region"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
+            >
+              <option value="">선택하세요</option>
+              <option value="서울">서울</option>
+              <option value="경기">경기</option>
+              <option value="인천">인천</option>
+              <option value="부산">부산</option>
+              <option value="대구">대구</option>
+              <option value="기타">기타</option>
+            </select>
+          </div> -->
+
+          <div>
+            <label
+              for="children"
+              class="block text-sm font-medium text-gray-700"
+              >자녀 수 (출산 예정 포함)</label
+            >
+            <input
+              type="number"
+              id="children"
+              name="children"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              placeholder="예: 1"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            내 혜택 찾아보기
+          </button>
+        </form>
+      </section>
+
+      <!--  혜택 분류 결과 (처음에는 숨김) -->
+      <section id="results-section" class="mt-10 max-w-5xl mx-auto hidden">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+          혜택 검색 결과
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- 수혜 가능한 혜택 -->
+          <div>
+            <h3 class="text-xl font-semibold text-green-600 mb-4">
+              ✅ 수혜 가능한 혜택입니다!
+            </h3>
+            <div id="matched-benefits" class="space-y-4">
+              <!-- JS로 동적 생성 -->
+              <div
+                class="p-4 bg-white border border-green-300 rounded-lg shadow"
+              >
+                <h4 class="font-bold text-lg">결과가 없습니다</h4>
+                <p class="text-sm text-gray-600">
+                  조건에 맞는 혜택이 없거나, 정보를 다시 입력해주세요.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 아쉽게 조건이 맞지 않는 혜택 -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-700 mb-4">
+              🔍 이런 혜택도 있어요
+            </h3>
+            <div id="unmatched-benefits" class="space-y-4">
+              <!-- JS로 동적 생성 -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 향후 계획 -->
+      <section
+        id="future-plans"
+        class="mt-16 bg-white p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto"
+      >
+        <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
+          앞으로의 계획
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- 정부 24 API 연동 -->
+          <div class="p-5 border border-gray-200 rounded-lg bg-gray-50">
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              간편 신청 연동
+            </h3>
+            <p class="text-gray-600 text-sm">
+              정부24 등 공공 API를 연동하여, 앱 내에서 혜택을 찾고 바로 신청까지
+              완료할 수 있도록 구현할 계획입니다.
+            </p>
+          </div>
+          <!-- 서류 업로드 자동 입력 -->
+          <div class="p-5 border border-gray-200 rounded-lg bg-gray-50">
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              서류 업로드 자동입력
+            </h3>
+            <p class="text-gray-600 text-sm">
+              기초 개인정보가 담긴 서류(등본 등)를 업로드하면, AI가 정보를
+              분석하여 자동으로 입력해주는 기능을 모색하고 있습니다.
+            </p>
+          </div>
+          <!-- 기업 복지 등록 -->
+          <div class="p-5 border border-gray-200 rounded-lg bg-gray-50">
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              기업/민간 복지 등록
+            </h3>
+            <p class="text-gray-600 text-sm">
+              기업에서 직접 자사의 복지 혜택을 등록하고 홍보할 수 있는 플랫폼을
+              제공하여, 더 많은 혜택 정보를 제공하고자 합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-800 mt-16">
+      <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-400 text-sm">
+          &copy; 2025 임신 혜택. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // ---  알고리즘 구현 ---
+
+      // 1. 혜택 데이터베이스 (DB 대신 임시 데이터)
+      // 실제로는 서버에서 가져와야 할 데이터
+      const allBenefits = [
+        {
+          id: 1,
+          title: "청년 임산부 특별 지원 (예시)",
+          description:
+            "만 20세 이상 30세 이하, 소득 2분위 이하(1, 2분위) 청년 임산부 대상.",
+          // 20세 이상 30세 이하, 소득 3분위 이상(1, 2분위)
+          criteria: {
+            minAge: 20,
+            maxAge: 30,
+            maxIncomeBracket: 2,
+            region: null,
+            minChildren: 0,
+          },
+        },
+        {
+          id: 2,
+          title: "서울형 산후조리 경비 지원",
+          description: "서울시 거주, 6개월 이상 거주한 산모. 소득 기준 없음.",
+          criteria: {
+            minAge: null,
+            maxAge: null,
+            maxIncomeBracket: null,
+            region: "서울",
+            minChildren: 1,
+          },
+        },
+        {
+          id: 3,
+          title: "경기도 산후조리비 지원",
+          description:
+            "경기도 거주, 출생일 기준 1년 이상 거주. 소득 7분위 이하.",
+          criteria: {
+            minAge: null,
+            maxAge: null,
+            maxIncomeBracket: 7,
+            region: "경기",
+            minChildren: 1,
+          },
+        },
+        {
+          id: 4,
+          title: "첫만남이용권 (전국 공통)",
+          description: "출생아 1인당 200만원 바우처 지급. 지역/소득 무관.",
+          criteria: {
+            minAge: null,
+            maxAge: null,
+            maxIncomeBracket: null,
+            region: null,
+            minChildren: 1,
+          },
+        },
+        {
+          id: 5,
+          title: "다자녀 특별 혜택 (부산)",
+          description: "부산 거주, 자녀 2명 이상, 소득 8분위 이하 가정.",
+          criteria: {
+            minAge: null,
+            maxAge: null,
+            maxIncomeBracket: 8,
+            region: "부산",
+            minChildren: 2,
+          },
+        },
+      ];
+
+      // 2. DOM 요소 선택
+      const infoForm = document.getElementById("info-form");
+      const resultsSection = document.getElementById("results-section");
+      const matchedBenefitsContainer =
+        document.getElementById("matched-benefits");
+      const unmatchedBenefitsContainer =
+        document.getElementById("unmatched-benefits");
+
+      // 3. 폼 제출 이벤트 리스너
+      infoForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // 폼 기본 제출 방지
+
+        // 4. 사용자 입력 값 가져오기
+        const user = {
+          age: parseInt(document.getElementById("age").value),
+          incomeBracket: parseInt(
+            document.getElementById("income-bracket").value
+          ),
+          region: document.getElementById("region").value,
+          children: parseInt(document.getElementById("children").value),
+        };
+
+        // 5. 혜택 필터링
+        const matchedBenefits = [];
+        const unmatchedBenefits = [];
+
+        allBenefits.forEach((benefit) => {
+          if (checkBenefitMatch(user, benefit.criteria)) {
+            matchedBenefits.push(benefit);
+          } else {
+            unmatchedBenefits.push(benefit);
+          }
+        });
+
+        // 6. 결과 렌더링
+        renderResults(matchedBenefits, unmatchedBenefits);
+
+        // 7. 결과 섹션 보여주기
+        resultsSection.classList.remove("hidden");
+        // 결과 섹션으로 스크롤
+        resultsSection.scrollIntoView({ behavior: "smooth" });
+      });
+
+      // 혜택 조건 검사 함수
+      function checkBenefitMatch(user, criteria) {
+        // 나이 검사 (minAge)
+        if (criteria.minAge !== null && user.age < criteria.minAge) {
+          return false;
+        }
+        // 나이 검사 (maxAge)
+        if (criteria.maxAge !== null && user.age > criteria.maxAge) {
+          return false;
+        }
+        // 소득분위 검사 (maxIncomeBracket: max 수치보다 *작거나 같아야* 함)
+        if (
+          criteria.maxIncomeBracket !== null &&
+          user.incomeBracket > criteria.maxIncomeBracket
+        ) {
+          // 예: 기준 2분위(1,2) -> 유저 4분위 -> 탈락 (4 > 2)
+          // 예: 기준 2분위(1,2) -> 유저 2분위 -> 통과 (2 > 2 아님)
+          return false;
+        }
+        // 지역 검사
+        if (criteria.region !== null && user.region !== criteria.region) {
+          return false;
+        }
+        // 자녀 수 검사 (minChildren)
+        if (
+          criteria.minChildren !== null &&
+          user.children < criteria.minChildren
+        ) {
+          return false;
+        }
+
+        // 모든 조건을 통과하면 true 반환
+        return true;
+      }
+
+      // 결과를 HTML로 렌더링하는 함수
+      function renderResults(matched, unmatched) {
+        // 컨테이너 비우기
+        matchedBenefitsContainer.innerHTML = "";
+        unmatchedBenefitsContainer.innerHTML = "";
+
+        // 수혜 가능한 혜택 렌더링
+        if (matched.length > 0) {
+          matched.forEach((benefit) => {
+            const benefitEl = document.createElement("div");
+            benefitEl.className =
+              "p-5 bg-white border border-green-300 rounded-lg shadow-md transition-all hover:shadow-lg";
+            benefitEl.innerHTML = `
+                        <h4 class="font-bold text-lg text-green-700">${benefit.title}</h4>
+                        <p class="text-sm text-gray-600 mt-1">${benefit.description}</p>
+                        <button class="text-sm text-white bg-green-600 px-3 py-1 rounded-full mt-3 hover:bg-green-700">
+                            신청하기 (연동예정)
+                        </button>
+                    `;
+            matchedBenefitsContainer.appendChild(benefitEl);
+          });
+        } else {
+          // 매칭된 혜택이 없을 경우
+          matchedBenefitsContainer.innerHTML = `
+                    <div class="p-4 bg-white border border-gray-300 rounded-lg shadow">
+                        <h4 class="font-bold text-lg">결과가 없습니다</h4>
+                        <p class="text-sm text-gray-600">입력하신 조건에 맞는 혜택을 찾지 못했습니다. <br>다른 혜택을 확인해보세요.</p>
+                    </div>
+                `;
+        }
+
+        // 기타 혜택 렌더링
+        if (unmatched.length > 0) {
+          unmatched.forEach((benefit) => {
+            const benefitEl = document.createElement("div");
+            benefitEl.className =
+              "p-4 bg-gray-100 border border-gray-200 rounded-lg";
+            benefitEl.innerHTML = `
+                        <h4 class="font-semibold text-gray-800">${benefit.title}</h4>
+                        <p class="text-xs text-gray-500 mt-1">${benefit.description}</p>
+                    `;
+            unmatchedBenefitsContainer.appendChild(benefitEl);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
+

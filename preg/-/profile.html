@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내 정보 - 임신 혜택</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="./index.html" class="flex-shrink-0 flex items-center">
+            <h1 class="text-2xl font-bold text-blue-600">아가페😘</h1>
+          </a>
+          <nav class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+            <a
+              href="./index.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              소개
+            </a>
+            <a
+              href="./search.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              id="searching-site"
+            >
+              혜택찾기
+            </a>
+            <a
+              id="community-nav"
+              href="./community.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+            커뮤니티
+            </a>
+            
+            <a
+              id="login-nav"
+              href="./login.html"
+              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+            >
+              로그인
+            </a>
+            <a
+              id="profile-nav"
+              href="./profile.html"
+              class="hidden items-center p-1 rounded-full text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              style="display: none"
+            >
+              <span class="sr-only">내 정보</span>
+              <svg
+                class="h-8 w-8 rounded-full bg-gray-200 text-gray-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                ></path>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8 flex justify-center items-center" style="min-height: calc(100vh - 128px);">
+      <div class="flex gap-10 items-start">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <h2 class="text-2xl font-bold text-center text-gray-900 mb-4">
+                내 정보
+            </h2>
+            <!-- Prominent Upload Button (hidden until login) -->
+            <div class="mb-4">
+              <button id="open-pdf-chooser-btn" type="button" class="w-full text-lg py-3 px-4 rounded-md bg-green-600 hover:bg-green-700 text-white font-semibold flex items-center justify-center gap-x-2" style="display:none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h4a1 1 0 110 2H5v12h10V4h-3a1 1 0 110-2h4a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V3z" clip-rule="evenodd" />
+                  <path d="M8.707 7.293a1 1 0 00-1.414 1.414L8 9.414V15a1 1 0 102 0V9.414l.707-.707a1 1 0 10-1.414-1.414L10 8.586 8.707 7.293z"/>
+                </svg>
+                PDF 업로드
+              </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <span class="block text-sm font-medium text-gray-700">로그인된 이메일</span>
+                    <p id="user-email" class="mt-1 text-gray-900 font-semibold">불러오는 중...</p>
+                </div>
+               
+                <button
+                    type="button"
+                    id="logout-button"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                >
+                    로그아웃
+                </button>
+                <div>
+                  <hr><br>
+                    <div class="text-xl font-bold text-center text-gray-900 mb-4">어떤 혜택을 신청 하셨는지 궁금하시나요?</div>
+                    
+                </div>
+               
+                <button
+                  type="button"
+                  id="check-benefits-button"
+                  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  onclick="location.href='check_my_benefits.html'"
+                >
+                  내가 신청한 혜택 확인해보기!
+                </button>
+                <div class="mt-4 space-y-2">
+                  <label for="profile-pdf" class="block text-sm font-medium text-gray-700">PDF 업로드 (OCR)</label>
+                  <!-- Hidden native file input; opened by the visible button below -->
+                  <input id="profile-pdf" type="file" accept="application/pdf" class="mt-1 hidden" />
+                  <div class="flex gap-2">
+                    <!-- duplicate open-pdf button removed; primary one is at the top of the card -->
+                  <div class="flex gap-2">
+                    <button id="extract-pdf-button" type="button" class="py-2 px-4 rounded-md bg-yellow-400 hover:bg-yellow-500 text-black" disabled>PDF에서 추출</button>
+                    <button id="preview-pdf-button" type="button" class="py-2 px-4 rounded-md bg-gray-200 hover:bg-gray-300" disabled>미리보기</button>
+                    <button id="ocr-cancel-button" type="button" class="py-2 px-4 rounded-md bg-red-200 hover:bg-red-300" disabled>중지</button>
+                  </div>
+                  <p id="pdf-ocr-status" class="text-sm text-gray-600"></p>
+                  <div class="flex items-center gap-2 mt-2">
+                    <div id="ocr-spinner" class="hidden">
+                      <svg class="animate-spin h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                      </svg>
+                    </div>
+                    <div class="w-full">
+                      <div class="w-full bg-gray-200 rounded h-2 overflow-hidden">
+                        <div id="ocr-progress-bar" class="bg-blue-500 h-2 w-0"></div>
+                      </div>
+                    </div>
+                    <div id="ocr-progress-text" class="text-sm text-gray-600 w-28 text-right">0%</div>
+                  </div>
+                </div>
+                
+            </div>
+        </div>
+        <section
+        id="user-info-section"
+        class="bg-white p-6 sm:p-8 rounded-lg shadow-lg max-w-2xl mx-auto"
+      >
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">
+          맞춤 혜택을 위한 정보 입력
+        </h2>
+        <p class="text-gray-600 mb-6">
+          간단한 정보를 입력하고 나에게 꼭 맞는 혜택을 찾아보세요. 
+        </p>
+        <form id="info-form" class="space-y-4">
+          <div>
+            <label for="age" class="block text-sm font-medium text-gray-700"
+              >나이 (만)</label
+            >
+            <input
+              type="number"
+              id="age"
+              name="age"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              placeholder="예: 30"
+              required
+            />
+          </div>
+
+          <div>
+            <label
+              for="income-bracket"
+              class="block text-sm font-medium text-gray-700"
+              >소득 분위</label
+            >
+            <select
+              id="income-bracket"
+              name="income-bracket"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
+            >
+              <option value="">선택하세요</option>
+              <option value="1">1분위</option>
+              <option value="2">2분위</option>
+              <option value="3">3분위</option>
+              <option value="4">4분위</option>
+              <option value="5">5분위</option>
+              <option value="6">6분위</option>
+              <option value="7">7분위</option>
+              <option value="8">8분위</option>
+              <option value="9">9분위</option>
+              <option value="10">10분위 (이상)</option>
+            </select>
+            <p class="mt-1 text-xs text-gray-500">
+              *소득분위가 낮을수록(1분위) 소득이 낮음을 의미합니다. [cite: 19]
+            </p>
+          </div>
+
+          <div>
+            <label for="region" class="block text-sm font-medium text-gray-700"
+              >거주 지역</label
+            >
+            <select
+              id="region"
+              name="region"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              required
+            >
+              <option value="">선택하세요</option>
+              <option value="서울">서울</option>
+              <option value="경기">경기</option>
+              <option value="인천">인천</option>
+              <option value="부산">부산</option>
+              <option value="대구">대구</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              for="children"
+              class="block text-sm font-medium text-gray-700"
+              >자녀 수 (출산 예정 포함)</label
+            >
+            <input
+              type="number"
+              id="children"
+              name="children"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              placeholder="예: 1"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            프로필 저장하기
+          </button>
+          <p id="profile-save-status" class="mt-2 text-sm"></p>
+          <div class="flex items-center gap-3 mt-2">
+            <input id="ocr-auto-save" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
+            <label for="ocr-auto-save" class="text-sm text-gray-700">OCR 자동 저장</label>
+          </div>
+        </form>
+      </section>
+      </div>
+      
+          <!-- Right side preview container only -->
+          <div id="ocr-preview-right" class="mt-2">
+            <div id="ocr-preview" class="mt-2">
+              <!-- 캔버스 미리보기(렌더된 PDF 페이지) -->
+            </div>
+          </div>
+        </form>
+
+    <script type="module">
+      import { onAuthChange, signOutUser } from './auth.js';
+
+      const userEmailElement = document.getElementById('user-email');
+      const logoutButton = document.getElementById('logout-button');
+      const pdfInput = document.getElementById('profile-pdf');
+      const extractButton = document.getElementById('extract-pdf-button');
+      const previewButton = document.getElementById('preview-pdf-button');
+      // serverToggle removed: client-side OCR only
+      const cancelButton = document.getElementById('ocr-cancel-button');
+      const openPdfChooserBtn = document.getElementById('open-pdf-chooser-btn');
+
+      // auth.js에 등록한 콜백을 통해 사용자 상태를 관찰합니다.
+      onAuthChange((user) => {
+        if (user) {
+          userEmailElement.textContent = user.email;
+          // enable PDF upload UI
+          if (pdfInput) pdfInput.disabled = false;
+          if (openPdfChooserBtn) { openPdfChooserBtn.style.display = 'block'; openPdfChooserBtn.disabled = false; }
+          // Only enable extract/preview if file is already selected
+          if (pdfInput && pdfInput.files && pdfInput.files.length > 0) {
+            if (extractButton) extractButton.disabled = false;
+            if (previewButton) previewButton.disabled = false;
+          }
+          // serverOCR option removed
+          if (cancelButton) cancelButton.disabled = true;
+        } else {
+          // disable PDF upload UI and redirect to login
+          if (pdfInput) { pdfInput.disabled = true; pdfInput.value = ''; }
+          if (extractButton) extractButton.disabled = true;
+          if (previewButton) previewButton.disabled = true;
+          // serverOCR option removed
+          if (cancelButton) cancelButton.disabled = true;
+          if (openPdfChooserBtn) { openPdfChooserBtn.style.display = 'none'; openPdfChooserBtn.disabled = true; }
+          alert('로그인이 필요합니다.');
+          window.location.href = './login.html';
+        }
+      });
+
+      // 로그아웃 처리
+      logoutButton.addEventListener('click', async () => {
+        try {
+          await signOutUser();
+          alert('로그아웃 되었습니다.');
+          window.location.href = './index.html';
+        } catch (error) {
+          console.error("로그아웃 실패:", error);
+          alert('로그아웃에 실패했습니다.');
+        }
+      });
+      // Open file chooser via button
+      openPdfChooserBtn?.addEventListener('click', () => {
+        if (pdfInput) pdfInput.click();
+      });
+      // Enable extract button when file selected
+      pdfInput?.addEventListener('change', () => {
+        if (pdfInput && pdfInput.files && pdfInput.files.length > 0) {
+          extractButton && (extractButton.disabled = false);
+        }
+      });
+    </script>
+    <!-- 스낵바 (토스트 알림) -->
+    <div id="snackbar" class="fixed right-6 bottom-6 z-50 hidden bg-gray-900 text-white px-4 py-2 rounded-md shadow-lg transition-opacity duration-300">
+      <span id="snackbar-message" class="text-sm">저장되었습니다.</span>
+    </div>
+    <script type="module" src="./profile.save.js"></script>
+    <!-- Load pdf.js and Tesseract via CDN (global) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.1.1/dist/tesseract.min.js"></script>
+    <script type="module" src="./ocr.js"></script>
+  </body>
+</html>
