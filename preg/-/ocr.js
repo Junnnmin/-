@@ -15,7 +15,7 @@ const autoSaveCheckbox = document.getElementById('ocr-auto-save');
 const spinnerEl = document.getElementById('ocr-spinner');
 const progressBarEl = document.getElementById('ocr-progress-bar');
 const progressTextEl = document.getElementById('ocr-progress-text');
-const previewContainer = document.getElementById('ocr-preview');
+const previewContainer = document.getElementById('ocr-preview-large');
 
 let currentWorker = null;
 let isCanceled = false;

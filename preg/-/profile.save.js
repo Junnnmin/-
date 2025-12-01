@@ -18,7 +18,7 @@ onAuthChange(async (user) => {
     if (!user) {
       // 로그인 안 된 사용자 처리: 로그인 페이지로 이동
       userEmailEl.textContent = "로그인 필요";
-      window.location.href = "./login.html";
+      window.location.href = "/login.html";
       return;
     }
   currentUser = user;

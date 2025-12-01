@@ -144,7 +144,7 @@
             try {
                 await signInWithEmail(email, password);
                 alert('로그인 성공!');
-                window.location.href = './profile.html'; // 로그인 성공 시 메인 페이지로 이동
+                window.location.href = '/profile.html'; // 로그인 성공 시 메인 페이지로 이동
             } catch (error) {
                 console.error("로그인 실패:", error);
                 errorMessage.textContent = '이메일 또는 비밀번호가 올바르지 않습니다.';
@@ -161,7 +161,7 @@
             try {
                 await signUpWithEmail(email, password);
                 alert('회원가입 성공! 자동으로 로그인됩니다.');
-                window.location.href = './index.html'; // 회원가입 성공 시 메인 페이지로 이동
+                window.location.href = '/index.html'; // 회원가입 성공 시 메인 페이지로 이동
             } catch (error) {
                 console.error("회원가입 실패:", error);
                 if (error.code === 'auth/weak-password') {
