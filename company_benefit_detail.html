@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 - 임신 혜택</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="./index.html" class="flex-shrink-0 flex items-center">
+            <h1 class="text-2xl font-bold text-blue-600">아가페😘</h1>
+          </a>
+          <nav class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+            <a
+              href="./index.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              소개
+            </a>
+            <a
+              href="./search.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              id="searching-site"
+            >
+            </a>
+            <a
+              id="community-nav"
+              href="./community.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+            커뮤니티
+            </a>
+            
+            <a
+              id="login-nav"
+              href="./login.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              로그인
+            </a>
+            <a
+              id="profile-nav"
+              href="./profile.html"
+              class="hidden items-center p-1 rounded-full text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              style="display: none"
+            >
+              <span class="sr-only">내 정보</span>
+              <svg
+                class="h-8 w-8 rounded-full bg-gray-200 text-gray-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                ></path>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+      <section class="bg-white p-6 sm:p-8 rounded-lg shadow-lg max-w-2xl mx-auto mt-8">
+        <div id = benefit-title>
+          
+        </div>
+        <h3 class="text-xl text-gray-600 max-w-3xl mx-auto text-center" id = "benefit-subDes">
+          
+        </h3>
+        <br>
+        <hr>
+        <br>
+        <pre class="text-m text-gray-600 max-w-3xl mx-auto" id="benefit-mainDes" style="white-space: pre-line; word-break: break-word;">
+      </section>
+      <section class="bg-white p-6 sm:p-8 rounded-lg shadow-lg max-w-2xl mx-auto mt-8">
+        <a class="text-m text-gray-600 max-w-3xl mx-auto" id = "benefit-site"></a>
+      </section>
+
+      <script type="module" src="./company-show-benefit-detail.js"></script>
+    </main>
+
+    <!-- <script type="module">
+        import { auth } from './firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { signOutUser } from './auth.js';
+
+        const userEmailElement = document.getElementById('user-email');
+        const logoutButton = document.getElementById('logout-button');
+
+        // 사용자 상태 감지
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 사용자가 로그인함
+                userEmailElement.textContent = user.email;
+
+            } else {
+                // 사용자가 로그인하지 않음
+                alert('로그인이 필요합니다.');
+                window.location.href = './login.html'; // 로그인 페이지로 리디렉션
+            }
+        });
+
+        // 로그아웃 처리
+        logoutButton.addEventListener('click', async () => {
+            try {
+                await signOutUser();
+                alert('로그아웃 되었습니다.');
+                window.location.href = './index.html'; // 메인 페이지로 이동
+            } catch (error) {
+                console.error("로그아웃 실패:", error);
+                alert('로그아웃에 실패했습니다.');
+            }
+        });
+    </script> -->
+    
+    <script type="module" src="./auth.js"></script>
+  </body>
+</html>
