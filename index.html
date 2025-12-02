@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>임신 혜택 - 소개</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="./index.html" class="flex-shrink-0 flex items-center">
+            <h1 class="text-2xl font-bold text-blue-600">아가페😘</h1>
+          </a>
+          <nav class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+            <a
+              href="./index.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-blue-500 text-sm font-medium text-gray-900"
+            >
+              소개
+            </a>
+            <a
+              href="./search.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+              id="searching-site"
+            >
+            혜택찾기
+            </a>
+            
+            <a
+              id="community-nav"
+              href="./community.html"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+            커뮤니티
+            </a>
+
+            <a
+              id="login-nav"
+              href="./login.html"
+              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+            >
+              로그인
+            </a>
+            <a
+              id="profile-nav"
+              href="./profile.html"
+              class="hidden items-center p-1 rounded-full text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              style="display: none"
+            >
+              <span class="sr-only">내 정보</span>
+              <svg
+                class="h-8 w-8 rounded-full bg-gray-200 text-gray-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                ></path>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+      <section class="text-center my-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          혹시, 놓치고 있는 혜택은 없으신가요?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          대한민국의 가장 큰 문제로 대두되는 <strong>저출산</strong>.
+          <br />
+          저희는 임산부 여러분이 겪는 <strong>경제적 부담</strong>을 조금이나마 덜어드리고자
+          합니다.
+        </p>
+        <a
+          href="./search.html"
+          class="mt-8 inline-block bg-blue-600 text-white text-lg font-medium py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition-colors"
+          >지금 바로 내 혜택 찾기</a
+        >
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold text-red-600 mb-3">심각한 저출산</h3>
+          <p class="text-gray-700">
+            현재 대한민국은 합계 출산율 <strong>0.78</strong>을 기록하고 있습니다.
+            이는 해외 매체에서도 가장 큰 문제점으로 언급할 정도로 심각한
+            수준입니다.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold text-yellow-600 mb-3">경제적 부담</h3>
+          <p class="text-gray-700">
+            2030 세대가 보는 저출산의 가장 큰 원인은
+            <strong>'경제적 부담감'</strong>입니다. 특히 결혼 적정기 분들이 아이를
+            낳는 것을 두려워하는 가장 큰 이유입니다.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold text-blue-600 mb-3">찾기 힘든 혜택</h3>
+          <p class="text-gray-700">
+            정부 지원은 2024년 대폭 확대되었지만, 정책이 너무 많고
+            복잡해 실제 수요자의 <strong>정책 인지도는 30% 미만</strong>입니다.
+           
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-white p-8 rounded-lg shadow-lg text-center max-w-4xl mx-auto my-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          저희가 도와드리겠습니다
+        </h2>
+        <p class="text-lg text-gray-600">
+          저희는 혜택을 놓치거나 찾기 어려운 임산부에게
+          <br />
+          <span class="font-bold text-blue-600"
+            >빠르고, 편안하고, 많은 조건 비교 없이</span
+          >
+          꼭 맞는 혜택을 제공하는 앱을 개발합니다.
+        </D>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 mt-16">
+      <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-400 text-sm">
+          &copy; 2025 임신 혜택. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="./auth.js"></script>
+  </body>
+</html>
